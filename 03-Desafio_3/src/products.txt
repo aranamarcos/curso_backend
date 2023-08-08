@@ -1,0 +1,1 @@
+[{"nombre":"lapiz","descripcion":"negro","precio":100,"img":"","codigo":78965,"stock":10,"id":1},{"nombre":"marcador","descripcion":"rojo","precio":200,"img":"","codigo":78895,"stock":10,"id":2}]

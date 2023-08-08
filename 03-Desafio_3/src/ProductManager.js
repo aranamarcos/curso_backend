@@ -1,16 +1,16 @@
 import { promises as fs } from 'fs'
 
 
-class ProductManager {
+export class ProductManager {
 
-    constructor() {
-        this.path = "./products.txt"
+    constructor(path) {
+        this.path = path
     }
 
     getProducts = async () => {
         // Leo el txt y lo imprimo en consola
         const products = JSON.parse(await fs.readFile(this.path, 'utf-8'))
-        console.log(products)
+        return products
     }
     
     getProductById = async (id) => {
@@ -18,7 +18,7 @@ class ProductManager {
         const products = JSON.parse(await fs.readFile(this.path, 'utf-8'))
         // Busco el id en el array y lo comunica si existe y sino da un mensaje
         const prod = products.find(producto => producto.id === id)
-        prod ? console.log(prod) : console.log("El producto no existe")
+        return(prod)
     }
     
     addProduct = async (product) => {
@@ -96,7 +96,7 @@ const probarFunciones = async () => {
 const producto1 = new Producto("lapiz", "negro", 100, "", 78965, 10)
 const producto2 = new Producto("lapicera", "azul", 200, "", 78895, 10)
 
-const productManager = new ProductManager()
+const productManager = new ProductManager("./src/products.txt")
 
 probarFunciones();
 
