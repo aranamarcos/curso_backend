@@ -11,7 +11,7 @@ export class ProductManager {
         if (this.idIncrement) {
             this.idIncrement++
         } else {
-            this.idIncrement = 4
+            this.idIncrement = 1
         }
         return this.idIncrement
     }
