@@ -50,13 +50,23 @@ app.use('/static', express.static(__dirname + '/public'))
 app.use('/api/product', routerProd)
 app.use('/api/carts', routerCart);
 // Handlebars
-app.get('/static', (req, res) => {
+app.get('/static', async (req, res) => {
+    const getProductos = await prodManager.getProducts()
+    //Indico la plantilla a utilizar
+    res.render('home', {
+        rutaCSS: 'home.css',
+        rutaJS: 'script.js',
+        titulo: "Ver Productos",
+        productos: getProductos.resp,
+        hayProductos: getProductos.resp != "No hay productos cargados"
+    })
+})
+app.get('/static/realTimeProducts', (req, res) => {
     //Indico la plantilla a utilizar
     res.render('realTimeProducts', {
         rutaCSS: 'realTimeProducts.css',
         rutaJS: 'realTimeProducts.js',
         titulo: "Crear Producto",
-        nombreUsuario: "Marcos"
     })
 })
 
