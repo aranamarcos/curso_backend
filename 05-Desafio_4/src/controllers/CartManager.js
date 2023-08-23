@@ -3,9 +3,8 @@ import { promises as fs } from 'fs'
 
 export class CartManager {
 
-    constructor(path, pathProd) {
+    constructor(path) {
         this.path = path
-        this.pathProd = pathProd
     }
 
     calcularID = async() => {
