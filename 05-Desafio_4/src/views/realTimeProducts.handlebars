@@ -1,37 +1,42 @@
 <h1>Crear nuevo producto</h1>
 
-<form id="formProduct">
+<div class="d-flex">
 
-    <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" name="nombre" class="form-control" required>
-    </div>
+    <form id="formProduct">
 
-    <div class="mb-3">
-        <label for="descripcion" class="form-label">Descripcion</label>
-        <input type="text" name="descripcion" class="form-control" required>
-    </div>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" required>
+        </div>
 
-    <div class="mb-3">
-        <label for="precio" class="form-label">Precio</label>
-        <input type="number" name="precio" class="form-control" required>
-    </div>
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripcion</label>
+            <input type="text" name="descripcion" class="form-control" required>
+        </div>
 
-    <div class="mb-3">
-        <label for="codigo" class="form-label">Codigo</label>
-        <input type="text" name="codigo" class="form-control" required>
-    </div>
+        <div class="mb-3">
+            <label for="precio" class="form-label">Precio</label>
+            <input type="number" name="precio" class="form-control" required>
+        </div>
 
-    <div class="mb-3">
-        <label for="stock" class="form-label">Stock</label>
-        <input type="text" name="stock" class="form-control" required>
-    </div>
+        <div class="mb-3">
+            <label for="codigo" class="form-label">Codigo</label>
+            <input type="text" name="codigo" class="form-control" required>
+        </div>
 
-    <div class="mb-3">
-        <label for="status" class="form-label">Status</label>
-        <input type="text" name="status" class="form-control" required>
-    </div>
+        <div class="mb-3">
+            <label for="stock" class="form-label">Stock</label>
+            <input type="text" name="stock" class="form-control" required>
+        </div>
 
-    <button type="submit" class="btn btn-success">Crear Producto</button>
+        <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <input type="text" name="status" class="form-control" required>
+        </div>
 
-</form>
+        <button type="submit" class="btn btn-success">Crear Producto</button>
+
+    </form>
+
+    <div id="productsDiv" class="d-flex align-items-start align-content-start flex-wrap"></div>
+</div>

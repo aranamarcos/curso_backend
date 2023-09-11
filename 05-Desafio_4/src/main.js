@@ -38,8 +38,12 @@ io.on('connection', (socket) => {
         socket.emit('respuesta', true)
     })
 
-    socket.on('nuevoProducto', (prod) => {
-        prodManager.addProduct(prod)
+    socket.on('nuevoProducto', async (prod) => {
+        await prodManager.addProduct(prod)
+
+        const products = await prodManager.getProducts()
+        socket.emit("products", products);
+
         socket.emit('mensajeProductoCreado', "Producto creado correctamente")
     })
 })
@@ -57,8 +61,10 @@ app.get('/static', async (req, res) => {
         rutaCSS: 'home.css',
         rutaJS: 'script.js',
         titulo: "Ver Productos",
-        productos: getProductos.resp,
-        hayProductos: getProductos.resp != "No hay productos cargados"
+        // productos: getProductos.resp,
+        productos: getProductos,
+        // hayProductos: getProductos.resp != "No hay productos cargados"
+        hayProductos: getProductos != "No hay productos cargados"
     })
 })
 app.get('/static/realTimeProducts', (req, res) => {

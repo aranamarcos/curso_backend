@@ -17,7 +17,8 @@ export class ProductManager {
         // Leo el txt y lo imprimo en consola
         const products = JSON.parse(await fs.readFile(this.path, 'utf-8'))
         if(products.length > 0){
-            return{status: 200, resp: products}
+            // return{status: 200, resp: products}
+            return products
         } else {
             return{status: 400, resp: "No hay productos cargados"}
         }

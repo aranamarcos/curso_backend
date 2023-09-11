@@ -12,5 +12,24 @@ form.addEventListener('submit', (e) => {
     socket.on('mensajeProductoCreado', (mensaje) => {
         Swal.fire(mensaje)
     })
-    e.target.reset
-})
+    e.target.reset()
+});
+
+const productsDiv = document.getElementById("productsDiv");
+
+socket.on("products", (products) => {
+    productsDiv.innerHTML = "";
+    products.forEach((prod) => {
+      productsDiv.innerHTML += `
+
+      <div class="card m-1" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">${prod.nombre} ${prod.descripcion}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">$ ${prod.precio}</h6>
+            <p class="card-text">Codigo: ${prod.codigo}</p>
+            <p class="card-text">Stock: ${prod.stock}</p>
+        </div>
+      </div>
+      `;
+    });
+  });
