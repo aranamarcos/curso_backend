@@ -1,0 +1,13 @@
+.card{
+    margin: 20px
+}
+
+.card-text{
+    margin: 0px;
+    font-size: small;
+}
+
+.sinProductos{
+    margin-left: 20px;
+    color: grey;
+}
